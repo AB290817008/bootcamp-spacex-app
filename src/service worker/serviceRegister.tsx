@@ -1,9 +1,13 @@
-export default function swDev(){
+// export default function swDev(){
    
   
-    let swUrl = `${process.env.PUBLIC_URL}/serviceWorker.js`
-    navigator.serviceWorker.register(swUrl).then((result) => console.log(result) )
+//     let swUrl = `${process.env.PUBLIC_URL}/serviceWorker.js`
+//     navigator.serviceWorker.register(swUrl).then((result) => console.log(result) )
     
   
-  }
+//   }
     
+export default function swDev() {
+	let swUrl = `${process.env.PUBLIC_URL}/serviceWorker.js`;
+	navigator.serviceWorker.register(swUrl).then((result) => console.log(result));
+}
