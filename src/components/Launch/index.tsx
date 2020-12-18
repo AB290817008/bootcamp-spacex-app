@@ -1,0 +1,22 @@
+import * as React from 'react';
+import { useLaunchQuery } from '../../generated/graphql';
+import LaunchList from './LaunchList';
+import {OwnProps} from './LaunchList';
+
+
+const LaunchListContainer = (props:OwnProps) => {
+    const { data, error, loading } = useLaunchQuery();
+
+    if (loading) {
+        return <div>Loading...</div>
+    }
+    
+    if (error || !data) {
+        return <div>ERROR</div>;
+    }
+
+    return <LaunchList data={data} {...props} />;
+}
+
+export default LaunchListContainer;
+
